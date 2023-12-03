@@ -1,13 +1,16 @@
 import NavBar from "./components/Nav/NavBar";
 import Hero from "./components/Hero/Hero";
+import ThreeSections from "./components/Sections/Sections";
 
 function App() {
   return (
     <>
-      <header>
+      {/* <header>
         <NavBar />
-      </header>
-      <Hero />
+      </header> */}
+      {/* <Hero /> */}
+
+      <ThreeSections></ThreeSections>
       
     </>
   )
