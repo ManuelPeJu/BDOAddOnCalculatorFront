@@ -1,0 +1,21 @@
+// ThreeSections.scss
+
+// Estilos para las secciones desplegables
+.section {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+    
+    .section, &.open {
+      max-height: 500px; /* Altura máxima de la sección cuando está abierta */
+      transition: max-height 0.5s ease;
+    }
+  
+    .section h2 {
+      margin-bottom: 10px;
+    }
+  }
+  
