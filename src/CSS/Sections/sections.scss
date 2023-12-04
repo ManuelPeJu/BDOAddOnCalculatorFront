@@ -2,6 +2,12 @@
 
 // Estilos para las secciones desplegables
 .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
     margin-top: 20px;
     border: 1px solid #ccc;
     padding: 10px;

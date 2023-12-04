@@ -5,12 +5,12 @@ import ThreeSections from "./components/Sections/Sections";
 function App() {
   return (
     <>
-      {/* <header>
+      <header>
         <NavBar />
-      </header> */}
+      </header>
       {/* <Hero /> */}
 
-      <ThreeSections></ThreeSections>
+      <ThreeSections />
       
     </>
   )
