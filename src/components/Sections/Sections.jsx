@@ -28,14 +28,15 @@ const ThreeSections = () => {
   };
 
   return (
-    <div>
-      <button onClick={() => toggleSection(1)}>Sección 1</button>
-      <button onClick={() => toggleSection(2)}>Sección 2</button>
-      <button onClick={() => toggleSection(3)}>Sección 3</button>
-
+    <div id='drop-down'>
+      <div className='drop-buttons'>
+        <button onClick={() => toggleSection(1)}>Sección 1</button>
+        <button onClick={() => toggleSection(2)}>Sección 2</button>
+        <button onClick={() => toggleSection(3)}>Sección 3</button>
+      </div>
       <div className={`section ${section1Visible ? 'open' : ''}`}>
-        <h2>Contenido Sección 1</h2>
-        <p>Texto de la sección 1...</p>
+        <h2>Choose Your Class</h2>
+        <input type="text" />
       </div>
       <div className={`section ${section2Visible ? 'open' : ''}`}>
         <h2>Contenido Sección 2</h2>
