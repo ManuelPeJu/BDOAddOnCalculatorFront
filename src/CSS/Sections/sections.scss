@@ -25,3 +25,18 @@
     }
   }
   
+  .drop-buttons {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+    margin-top: 15px;
+    
+  }
+
+  .drop-down-menu {
+    display: flex;
+    flex-direction: column;
+  }

@@ -1,0 +1,21 @@
+.aboutUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    background-color: map-get(map-get($themes, dark), secondary);
+    color: map-get(map-get($themes, dark), text);
+    max-height: 25%;
+    max-width: 100%;
+}
+
+.about-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +8,10 @@
 }
 
 body {
+  background-color: #091216;
   height: 100vh;
   width: 100vw;
+  color: white;
 }
 
 .navbar {
@@ -17,4 +20,69 @@ body {
   justify-content: center;
   flex-direction: row;
   padding: 15px;
+}
+
+.hero {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.hero h3 {
+  color: black;
+  font-weight: bold;
+}
+
+.hero p {
+  color: white;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+}
+.section .section, .section.open {
+  max-height: 500px; /* Altura máxima de la sección cuando está abierta */
+  transition: max-height 0.5s ease;
+}
+.section .section h2 {
+  margin-bottom: 10px;
+}
+
+.drop-buttons {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 15px;
+}
+
+.drop-down-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  background-color: #11191D;
+  color: #f8fbfc;
+  max-height: 25%;
+  max-width: 100%;
 }/*# sourceMappingURL=styles.css.map */

@@ -1,17 +1,21 @@
-import NavBar from "./components/Nav/NavBar";
-import Hero from "./components/Hero/Hero";
+import React, { useState } from "react";
+// import Theme from "./components/Theme/Theme"
+import AboutUs from "./components/AboutUs/AboutUs";
 import ThreeSections from "./components/Sections/Sections";
+import HowToUse from "./components/HowToUse/HowToUse";
 
 function App() {
+
   return (
     <>
-      <header>
-        <NavBar />
-      </header>
-      {/* <Hero /> */}
-
-      <ThreeSections />
-      
+      <main id="home">
+      <AboutUs id="aboutUs" />
+      <HowToUse id="HTU" />
+      <ThreeSections id="Calculator" />
+      </main>
+      <footer>
+        IM NOT A FOOTER
+      </footer>
     </>
   )
 }
