@@ -19,3 +19,7 @@
     align-content: center;
     justify-items: center;
 }
+
+.about-item h3, p {
+    color: map-get(map-get($themes, dark), text);
+}
