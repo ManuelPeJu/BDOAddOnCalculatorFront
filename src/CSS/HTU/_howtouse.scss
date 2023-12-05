@@ -1,0 +1,14 @@
+.howtouse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    background-color: map-get(map-get($themes, dark), secondary);;
+    
+}
+
+.howtouse h3, p {
+    color: map-get(map-get($themes, dark), text);
+}

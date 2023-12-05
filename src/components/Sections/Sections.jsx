@@ -44,16 +44,16 @@ const ThreeSections = () => {
         <button onClick={() => toggleSection(3)}>Sección 3</button>
       </div>
       <div className={`section ${section1Visible ? 'open' : ''}`}>
-        <h2>Choose Your Class</h2>
-        <input type="text" />
+        <h3>Choose Your Class:</h3>
+        <select name="Class" id="">ASD</select>
       </div>
       <div className={`section ${section2Visible ? 'open' : ''}`}>
-        <h2>Contenido Sección 2</h2>
-        <p>Texto de la sección 2...</p>
+        <h3>Choose the Spot to grind:</h3>
+        <select name="Spot" id="">SPOT</select>
       </div>
       <div className={`section ${section3Visible ? 'open' : ''}`}>
-        <h2>Contenido Sección 3</h2>
-        <p>Texto de la sección 3...</p>
+        <h3>Choose your Artifacts build:</h3>
+        <select name="Artiacts" id=""></select>
       </div>
     </div>
   );
