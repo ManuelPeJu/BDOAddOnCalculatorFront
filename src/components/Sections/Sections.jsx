@@ -27,8 +27,17 @@ const ThreeSections = () => {
     }
   };
 
+
+  // const classes = [
+  //   id = 0,
+  //   name = 0,
+  // ]
+
+
+  
+
   return (
-    <div id='drop-down'>
+    <div className='drop-down-menu'>
       <div className='drop-buttons'>
         <button onClick={() => toggleSection(1)}>Sección 1</button>
         <button onClick={() => toggleSection(2)}>Sección 2</button>
