@@ -39,9 +39,9 @@ const ThreeSections = () => {
   return (
     <div className='drop-down-menu'>
       <div className='drop-buttons'>
-        <button onClick={() => toggleSection(1)}>Sección 1</button>
-        <button onClick={() => toggleSection(2)}>Sección 2</button>
-        <button onClick={() => toggleSection(3)}>Sección 3</button>
+        <button onClick={() => toggleSection(1)}>Classes</button>
+        <button onClick={() => toggleSection(2)}>Rotation</button>
+        <button onClick={() => toggleSection(3)}>Addons</button>
       </div>
       <div className={`section ${section1Visible ? 'open' : ''}`}>
         <h3>Choose Your Class:</h3>
