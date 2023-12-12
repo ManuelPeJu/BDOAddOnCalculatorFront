@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const ThreeSections = () => {
   const [section1Visible, setSection1Visible] = useState(false);
   const [section2Visible, setSection2Visible] = useState(false);
   const [section3Visible, setSection3Visible] = useState(false);
+
 
   const toggleSection = (sectionNumber) => {
     switch (sectionNumber) {
@@ -45,7 +47,7 @@ const ThreeSections = () => {
       </div>
       <div className={`section ${section1Visible ? 'open' : ''}`}>
         <h3>Choose Your Class:</h3>
-        <select name="Class" id="">ASD</select>
+        <option value="">default</option>
       </div>
       <div className={`section ${section2Visible ? 'open' : ''}`}>
         <h3>Choose the Spot to grind:</h3>
@@ -53,7 +55,7 @@ const ThreeSections = () => {
       </div>
       <div className={`section ${section3Visible ? 'open' : ''}`}>
         <h3>Choose your Artifacts build:</h3>
-        <select name="Artiacts" id=""></select>
+        <select name="Artifacts" id=""></select>
       </div>
     </div>
   );
