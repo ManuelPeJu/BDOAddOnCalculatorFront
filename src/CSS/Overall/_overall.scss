@@ -32,3 +32,16 @@ body {
     width: 100vw;
     color:white;
 }
+
+
+.class-card {
+  background-color: map-get(map-get($themes, light), background );
+  color: map-get(map-get($themes, light), text);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
