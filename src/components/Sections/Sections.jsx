@@ -29,12 +29,24 @@ const ThreeSections = () => {
     }
   };
 
+  const [classes, setClasses] = useState([])
 
-  // const classes = [
-  //   id = 0,
-  //   name = 0,
-  // ]
+  useEffect(() => {
+    const fetchData = async () => {
 
+      try {
+        const response = await fetch("http://localhost:5000/api/classes");
+        if(!response.ok) {
+          throw new Error("error al obtener datos")
+        };
+        const data = await response.json()
+        setClasses(data);
+      } catch (error) {
+        console.error("Hubo problemas al obtener los datos", error)
+      };
+    };
+    fetchData()
+  }, []);
 
   
 
@@ -47,7 +59,16 @@ const ThreeSections = () => {
       </div>
       <div className={`section ${section1Visible ? 'open' : ''}`}>
         <h3>Choose Your Class:</h3>
-        <option value="">default</option>
+        <select name="" id="">
+        <option value="" placeholder='Choose your class!'>Choose</option>
+          {
+            classes.map((c) => {
+              return (
+                <option key={c.id} className="fluid-container class-card">{c.name}</option>
+              )
+            })
+          }
+        </select>
       </div>
       <div className={`section ${section2Visible ? 'open' : ''}`}>
         <h3>Choose the Spot to grind:</h3>
