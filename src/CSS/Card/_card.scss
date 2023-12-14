@@ -1,0 +1,29 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: black;
+    gap: 15px;
+    margin: 10px;
+}
+
+.card img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.card-grid {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: auto auto auto auto auto ;
+}
+
+
+// @media (max-width: 800px) {
+//     .card-grid {
+//         grid-template-columns: auto auto auto;
+//     }
+// }

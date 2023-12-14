@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import Card from '../Card/Card';
 
 const ThreeSections = () => {
   const [section1Visible, setSection1Visible] = useState(false);
@@ -59,16 +60,20 @@ const ThreeSections = () => {
       </div>
       <div className={`section ${section1Visible ? 'open' : ''}`}>
         <h3>Choose Your Class:</h3>
-        <select name="" id="">
-        <option value="" placeholder='Choose your class!'>Choose</option>
+        <section className='fluid-container card-grid' name="classes" >
           {
             classes.map((c) => {
               return (
-                <option key={c.id} className="fluid-container class-card">{c.name}</option>
+                <Card
+                  key={c.id} 
+                  id={c.id}
+                  name={c.name}
+                  imageUrl={c.imageUrl}
+                />
               )
             })
           }
-        </select>
+        </section>
       </div>
       <div className={`section ${section2Visible ? 'open' : ''}`}>
         <h3>Choose the Spot to grind:</h3>
