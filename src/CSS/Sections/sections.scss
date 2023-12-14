@@ -16,7 +16,7 @@
     max-height: 0;
     
     .section, &.open {
-      max-height: 500px; /* Altura máxima de la sección cuando está abierta */
+      max-height: 100%; /* Altura máxima de la sección cuando está abierta */
       transition: max-height 0.5s ease;
     }
   
@@ -48,4 +48,17 @@
   .drop-down-menu {
     display: flex;
     flex-direction: column;
+  }
+
+  .class-card {
+    background-color: map-get(map-get($themes, light), background );
+    color: map-get(map-get($themes, light), text);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  
   }
