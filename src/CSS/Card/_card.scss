@@ -1,18 +1,31 @@
 .card {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
     flex-wrap: wrap;
-    color: black;
+    text-align: center;
+    color: map-get(map-get($themes, dark), text);
     gap: 15px;
     margin: 10px;
+    padding: 5px;
+    background-color: map-get(map-get($themes, dark), secondary);
+    border: 3px solid transparent;
+}
+
+.card:hover {
+    border: 3px solid map-get(map-get($themes, dark), accent);;
 }
 
 .card img {
     display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-items: flex-start;
+    background-color: map-get(map-get($themes, dark), secondary);
 }
 
 .card-grid {
@@ -22,8 +35,66 @@
 }
 
 
-// @media (max-width: 800px) {
-//     .card-grid {
-//         grid-template-columns: auto auto auto;
-//     }
-// }
+
+@media (max-width: 1600px) {
+    .card-grid {    
+        grid-template-columns: auto auto auto auto ;
+        flex-wrap: wrap;
+    }
+
+    .card img {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+
+    }
+}
+
+@media (max-width: 800px) {
+    .card-grid {    
+        grid-template-columns: auto auto auto;
+        flex-wrap: wrap;
+    }
+
+    .card img {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .card-grid {    
+        grid-template-columns: auto auto;
+        flex-wrap: wrap;
+    }
+
+    .card img {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+
+    }
+}
