@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
+import SubCard from '../Card/SubCard';
+import Combo from '../Combo/Combo';
+// import { useParams } from "react-router-dom"
 
 
 const ThreeSectionsTest = () => {
   const [activeSection, setActiveSection] = useState(null);
-
-  const toggleSection = (sectionNumber) => {
-    setActiveSection(activeSection === sectionNumber ? null : sectionNumber);
-  };
-
   const [classes, setClasses] = useState([])
-
+  // const { id } = useParams();
+  
   useEffect(() => {
     const fetchData = async () => {
-
       try {
-        const response = await fetch("http://localhost:5000/api/classes");
+        const response = await fetch(`http://localhost:5000/api/classes/`);
         if(!response.ok) {
           throw new Error("error al obtener datos")
         };
@@ -28,10 +26,18 @@ const ThreeSectionsTest = () => {
     fetchData()
   }, []);
 
+
+  const toggleSection = (sectionNumber) => {
+    setActiveSection(activeSection === sectionNumber ? null : sectionNumber);
+  };
+
+
+
   return (
     <div>
+      {/* ACCORDION 1 */}
       <div className={`section ${activeSection !== 1 ? 'closed' : ''} accordion`}>
-        <h2 onClick={() => toggleSection(1)}>CLASSES</h2>
+        <h2 onClick={() => toggleSection(1)}><b>CLASSES <i className="bi bi-plus-circle"></i></b></h2>
         {activeSection === 1 && (
           <section className='fluid-container card-grid' name="classes" >
           {
@@ -49,19 +55,23 @@ const ThreeSectionsTest = () => {
         </section>
         )}
       </div>
+
+        {/* ACCORDION 2 */}
       <div className={`section ${activeSection !== 2 ? 'closed' : ''} accordion`}>
-        <h2 onClick={() => toggleSection(2)}>Sección 2</h2>
+        <h2 onClick={() => toggleSection(2)}><b>Choose SPOT</b></h2>
         {activeSection === 2 && (
           <div className="content">
             <p>Texto de la sección 2...</p>
           </div>
         )}
       </div>
+
+      {/* ACCORDION 3 */}
       <div className={`section ${activeSection !== 3 ? 'closed' : ''} accordion`}>
         <h2 onClick={() => toggleSection(3)}>Sección 3</h2>
         {activeSection === 3 && (
           <div className="content">
-            <p>Texto de la sección 3...</p>
+            <Combo />
           </div>
         )}
       </div>
