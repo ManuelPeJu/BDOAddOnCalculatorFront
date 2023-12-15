@@ -9,6 +9,7 @@ const ThreeSectionsTest = () => {
   const [activeSection, setActiveSection] = useState(null);
   const [classes, setClasses] = useState([])
   // const { id } = useParams();
+
   
   useEffect(() => {
     const fetchData = async () => {
