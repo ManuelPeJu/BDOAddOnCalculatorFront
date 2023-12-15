@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
+import SubCard from '../Card/SubCard';
 
 
 const ThreeSectionsTest = () => {
   const [activeSection, setActiveSection] = useState(null);
-
-  const toggleSection = (sectionNumber) => {
-    setActiveSection(activeSection === sectionNumber ? null : sectionNumber);
-  };
-
   const [classes, setClasses] = useState([])
-
+  
   useEffect(() => {
     const fetchData = async () => {
 
@@ -28,8 +24,16 @@ const ThreeSectionsTest = () => {
     fetchData()
   }, []);
 
+
+  const toggleSection = (sectionNumber) => {
+    setActiveSection(activeSection === sectionNumber ? null : sectionNumber);
+  };
+
+
+
   return (
     <div>
+      {/* ACCORDION 1 */}
       <div className={`section ${activeSection !== 1 ? 'closed' : ''} accordion`}>
         <h2 onClick={() => toggleSection(1)}>CLASSES</h2>
         {activeSection === 1 && (
@@ -49,6 +53,8 @@ const ThreeSectionsTest = () => {
         </section>
         )}
       </div>
+
+        {/* ACCORDION 2 */}
       <div className={`section ${activeSection !== 2 ? 'closed' : ''} accordion`}>
         <h2 onClick={() => toggleSection(2)}>Sección 2</h2>
         {activeSection === 2 && (
@@ -57,6 +63,8 @@ const ThreeSectionsTest = () => {
           </div>
         )}
       </div>
+
+      {/* ACCORDION 3 */}
       <div className={`section ${activeSection !== 3 ? 'closed' : ''} accordion`}>
         <h2 onClick={() => toggleSection(3)}>Sección 3</h2>
         {activeSection === 3 && (
