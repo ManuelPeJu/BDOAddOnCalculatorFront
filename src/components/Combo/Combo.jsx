@@ -2,7 +2,7 @@ import React from 'react'
 
 const Combo = () => {
   return (
-    <form action="">
+    <form action={console.log("Hola")}>
         <button>Add Skill +</button>
     </form>
   )
