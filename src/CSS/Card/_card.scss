@@ -35,10 +35,21 @@
     padding: 15px;
 }
 
-.input_options {
-    background-color: rebeccapurple;
+.input_options select {
+    background-color: map-get(map-get($themes, dark), background );
+    color: map-get(map-get($themes, dark), text);
+    margin: 5px;
+    padding: 10px;
+    font: bold;
 }
 
+.input_options button {
+    // border: 3px solid black;
+    background-color: map-get(map-get($themes, dark), background );
+    color: map-get(map-get($themes, dark), text);
+    padding: 9px;
+    font: bold;
+}
 
 @media (max-width: 1600px) {
     .card-grid {    
