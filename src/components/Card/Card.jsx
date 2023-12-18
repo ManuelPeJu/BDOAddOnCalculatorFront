@@ -51,6 +51,7 @@ const Card = ({id, imageUrl, name}) => {
 
     // Cierra el input y realiza cualquier otra acción necesaria
     setIsInputOpen(false)
+    console.log("hola, funciono");
   }
   return (
     <div className='card card-style' id={id} onClick={handleCardClick}>
@@ -62,7 +63,7 @@ const Card = ({id, imageUrl, name}) => {
             <option value="AWA">AWAKENING</option>
             <option value="SUCC">SUCCESION</option>
           </select>
-          <button onClick={handleConfirmClick}>Confirm!</button>
+          <button onClick={handleConfirmClick}>CONFIRM!</button>
         </div>
       )}
     </div>
