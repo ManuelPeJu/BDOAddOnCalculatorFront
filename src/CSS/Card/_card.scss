@@ -33,9 +33,11 @@
     flex-wrap: wrap;
     grid-template-columns: auto auto auto auto auto ;
     padding: 15px;
-    background-color: blueviolet;
 }
 
+.input_options {
+    background-color: rebeccapurple;
+}
 
 
 @media (max-width: 1600px) {
