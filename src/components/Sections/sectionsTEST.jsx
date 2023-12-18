@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import SubCard from '../Card/SubCard';
 import Combo from '../Combo/Combo';
-// import { useParams } from "react-router-dom"
+import Swal from "sweetalert2";
 
 
 const ThreeSectionsTest = () => {
   const [activeSection, setActiveSection] = useState(null);
   const [classes, setClasses] = useState([])
-  // const { id } = useParams();
   
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +25,18 @@ const ThreeSectionsTest = () => {
     fetchData()
   }, []);
 
+  const handleClick = (e) => {
+
+    e.preventDefault
+    // Swal.fire({
+    //   title: "Card name",
+    //   text: "Mocasines saltarines",
+    //   imageUrl: "https://i1.sndcdn.com/artworks-000442775559-th6rjj-t500x500.jpg",
+    //   imageWidth: 400,
+    //   imageHeight: 300,
+    //   imageAlt: "Custom image"
+    // });
+  }
 
   const toggleSection = (sectionNumber) => {
     setActiveSection(activeSection === sectionNumber ? null : sectionNumber);
@@ -35,24 +46,26 @@ const ThreeSectionsTest = () => {
 
   return (
     <div>
+
       {/* ACCORDION 1 */}
       <div className={`section ${activeSection !== 1 ? 'closed' : ''} accordion`}>
         <h2 onClick={() => toggleSection(1)}><b>CLASSES <i className="bi bi-plus-circle"></i></b></h2>
         {activeSection === 1 && (
           <section className='fluid-container card-grid' name="classes" >
-          {
-            classes.map((c) => {
-              return (
-                <Card
-                  key={c.id} 
-                  id={c.id}
-                  name={c.name}
-                  imageUrl={c.imageUrl}
-                />
-              )
-            })
-          }
-        </section>
+            {
+              classes.map((c) => {
+                return (
+                  <Card
+                    key={c.id} 
+                    id={c.id}
+                    name={c.name}
+                    imageUrl={c.imageUrl} 
+                    onClick={(e) => handleClick(e)}
+                  />
+                )
+              })
+            }
+          </section>
         )}
       </div>
 
@@ -75,6 +88,7 @@ const ThreeSectionsTest = () => {
           </div>
         )}
       </div>
+
     </div>
   );
 };
