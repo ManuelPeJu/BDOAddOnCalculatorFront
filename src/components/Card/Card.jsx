@@ -6,7 +6,7 @@ const Card = ({id, imageUrl, name}) => {
   const [selectedOption, setSelectedOption] = useState('')
 
   const handleCardClick = () => {
-    setIsInputOpen((prevState) => !prevState)
+    setIsInputOpen(true)
   }
 
   const handleInputChange = (event) => {
