@@ -2,7 +2,9 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer className='fluid-container footer'>
+      <h1>Made with ❤️</h1>
+    </footer>
   )
 }
 
