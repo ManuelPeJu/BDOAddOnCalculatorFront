@@ -17,6 +17,7 @@ const ThreeSectionsTest = () => {
           throw new Error("error al obtener datos")
         };
         const data = await response.json()
+        // setClasses(data.map(classID => ({...classID, id: classID._id}))); // Save the ID of each object in the state
         setClasses(data);
       } catch (error) {
         console.error("Hubo problemas al obtener los datos", error)
@@ -54,6 +55,7 @@ const ThreeSectionsTest = () => {
           <section className='fluid-container card-grid' name="classes" >
             {
               classes.map((c) => {
+                console.log(c.id)
                 return (
                   <Card
                     key={c.id} 

@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       <main id="home">
-      <AboutUs id="aboutUs" />
-      <HowToUse id="HTU" />
+      {/* <AboutUs id="aboutUs" />
+      <HowToUse id="HTU" /> */}
       {/* <ThreeSections id="Calculator" /> */}
       <ThreeSectionsTest />
       <ScrollToTopButton /> 
