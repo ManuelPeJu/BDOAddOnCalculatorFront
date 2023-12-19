@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 const ThreeSectionsTest = () => {
   const [activeSection, setActiveSection] = useState(null);
   const [classes, setClasses] = useState([])
+
   
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +20,7 @@ const ThreeSectionsTest = () => {
         const data = await response.json()
         // setClasses(data.map(classID => ({...classID, id: classID._id}))); // Save the ID of each object in the state
         setClasses(data);
+        // console.log(data)
       } catch (error) {
         console.error("Hubo problemas al obtener los datos", error)
       };
@@ -29,14 +31,7 @@ const ThreeSectionsTest = () => {
   const handleClick = (e) => {
 
     e.preventDefault
-    // Swal.fire({
-    //   title: "Card name",
-    //   text: "Mocasines saltarines",
-    //   imageUrl: "https://i1.sndcdn.com/artworks-000442775559-th6rjj-t500x500.jpg",
-    //   imageWidth: 400,
-    //   imageHeight: 300,
-    //   imageAlt: "Custom image"
-    // });
+    
   }
 
   const toggleSection = (sectionNumber) => {
@@ -55,7 +50,7 @@ const ThreeSectionsTest = () => {
           <section className='fluid-container card-grid' name="classes" >
             {
               classes.map((c) => {
-                console.log(c.id)
+                // console.log(c.id)
                 return (
                   <Card
                     key={c.id} 

@@ -8,15 +8,15 @@ const Card = ({id, imageUrl, name}) => {
 
   const handleCardClick = () => {
     setIsInputOpen(true)
-  }
 
+  }
   const handleInputChange = (e) => {
     setSelectedOption(e.target.value)
   }
-
+  
   const handleConfirmClick = () => {
     // Make the API call according to the selected option
-    const fetchData = async () => {
+    const fetchData = async (id, selectedOption) => {
       try {
         const response = await fetch(`http://localhost:5000/api/classes/${id}?state=${selectedOption}`);
         if(!response.ok) {
@@ -24,24 +24,28 @@ const Card = ({id, imageUrl, name}) => {
         };
         const data = await response.json()
         setClasses(data);
+        console.log(data)
       } catch (error) {
         console.error("Hubo problemas al obtener los datos", error)
       };
-      fetchData();
-    }; 
+    };
+
     if (selectedOption === 'AWA') {
       //API call for option 1
       fetchData(id, "AWA");
     } else if (selectedOption === 'SUC') {
       //API call for option 2
-        fetchData(id, "SUC");
-    }
+      fetchData(id, "SUC");
+    } else {
+      fetchData(id, "");
+    };
     //Close the input and perform any other necessary actions
     setIsInputOpen(false)
     console.log(selectedOption);
   }
 
-
+  
+  
   return (
     <div className='card card-style' id={id} onClick={handleCardClick}>
       <img src={imageUrl} alt="image not found" width="40px" height="40px" />
@@ -49,9 +53,9 @@ const Card = ({id, imageUrl, name}) => {
       {isInputOpen && (
         <div className='input_options'>
           <select value={selectedOption} onChange={handleInputChange}>
-            <option value="Default">Default!</option>
+            <option value="">Default!</option>
             <option value="AWA">AWAKENING</option>
-            <option value="SUCC">SUCCESION</option>
+            <option value="SUC">SUCCESION</option>
           </select>
           <button onClick={handleConfirmClick}>CONFIRM!</button>
         </div>
