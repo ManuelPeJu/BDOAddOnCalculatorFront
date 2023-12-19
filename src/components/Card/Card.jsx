@@ -4,55 +4,44 @@ const Card = ({id, imageUrl, name}) => {
 
   const [isInputOpen, setIsInputOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState('')
+  const [classes, setClasses] = useState([])
 
   const handleCardClick = () => {
     setIsInputOpen(true)
   }
 
-  const handleInputChange = (event) => {
-    setSelectedOption(event.target.value)
+  const handleInputChange = (e) => {
+    setSelectedOption(e.target.value)
   }
 
   const handleConfirmClick = () => {
-    // Realiza la llamada a la API según la opción seleccionada
-    if (selectedOption === 'AWA') {
-      const fetchData = async () => {
-        try {
-          const response = await fetch(`http://localhost:5000/api/classes/${id}?state=${selectedOption}`);
-          if(!response.ok) {
-            throw new Error("error al obtener datos")
-          };
-          const data = await response.json()
-          setClasses(data);
-        } catch (error) {
-          console.error("Hubo problemas al obtener los datos", error)
+    // Make the API call according to the selected option
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/classes/${id}?state=${selectedOption}`);
+        if(!response.ok) {
+          throw new Error("error al obtener datos")
         };
-        fetchData();
-        console.log(fetchData());
-
+        const data = await response.json()
+        setClasses(data);
+      } catch (error) {
+        console.error("Hubo problemas al obtener los datos", error)
       };
+      fetchData();
+    }; 
+    if (selectedOption === 'AWA') {
+      //API call for option 1
+      fetchData(id, "AWA");
     } else if (selectedOption === 'SUC') {
-      // Llamada a la API para opción 2const fetchData = async () => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch(`http://localhost:5000/api/classes/${id}?state=${selectedOption}`);
-            if(!response.ok) {
-              throw new Error("error al obtener datos")
-            };
-            const data = await response.json()
-            setClasses(data);
-          } catch (error) {
-            console.error("Hubo problemas al obtener los datos", error)
-          };
-          fetchData();
-          console.log(fetchData());
-        };
+      //API call for option 2
+        fetchData(id, "SUC");
     }
-
-    // Cierra el input y realiza cualquier otra acción necesaria
+    //Close the input and perform any other necessary actions
     setIsInputOpen(false)
-    console.log("hola, funciono");
+    console.log(selectedOption);
   }
+
+
   return (
     <div className='card card-style' id={id} onClick={handleCardClick}>
       <img src={imageUrl} alt="image not found" width="40px" height="40px" />
@@ -60,6 +49,7 @@ const Card = ({id, imageUrl, name}) => {
       {isInputOpen && (
         <div className='input_options'>
           <select value={selectedOption} onChange={handleInputChange}>
+            <option value="Default">Default!</option>
             <option value="AWA">AWAKENING</option>
             <option value="SUCC">SUCCESION</option>
           </select>
