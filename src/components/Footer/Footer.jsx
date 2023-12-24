@@ -1,16 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+
 
 const Footer = () => {
+
+  const [isVisible, setIsVisible] = useState(true);
+  const handleToggle = () => {
+    setIsVisible(!isVisible)
+  }
+
+
   return (
-<footer className='fluid-container'>
-  <div class="logo">
+<footer className='fluid-container footer'>
+  {
+    isVisible && 
+    <>
+    <div class="logo">
     <img src="../../assets/logo_TEMP.png" alt="Logo" />
   </div>
   {/* YISUS */}
   <div class="redes-sociales">
     <div className='list-item'>
         <span>Snowfall86</span>
-        <p>thanks our programmer Jesús for helping to create this app</p>
+        <p>thanks our programmer Snowfall for helping to create and develop the backend of this app</p>
     </div>
   </div>
   {/* GAMERURC */}
@@ -33,6 +45,9 @@ const Footer = () => {
         <a href="https://www.linkedin.com/in/manuel-pérez-jurado/"><i class="bi bi-linkedin"></i></a>
       </div>
   </div>
+    </>
+  }
+  <button onClick={handleToggle}>Footer</button>
 </footer>
   )
 }
