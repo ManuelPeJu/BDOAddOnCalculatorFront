@@ -2,6 +2,7 @@
     background-color: map-get(map-get($themes, dark), secondary);
     color: map-get(map-get($themes, dark), text);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     position: fixed;
@@ -78,6 +79,14 @@
   @media (max-width: 800px) {
     .redes-sociales ul li:not(:last-child) {
       margin-right: 5px; /* Ajusta el espaciado entre las redes sociales aquí tus necesidades */
+    }
+
+    .list-item p {
+      display: none;
+      overflow: break-word;
+      width: 125px;
+      -webkit-line-clamp: 3; /* Número de líneas que deseas mostrar */
+      -webkit-box-orient: vertical;
     }
     
   }
