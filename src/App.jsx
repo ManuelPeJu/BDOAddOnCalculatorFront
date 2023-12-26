@@ -10,11 +10,11 @@ function App() {
   return (
     <>
       <main id="home">
+        <ScrollToTopButton /> 
       {/* <AboutUs id="aboutUs" />
       <HowToUse id="HTU" /> */}
       {/* <ThreeSections id="Calculator" /> */}
       <ThreeSectionsTest />
-      <ScrollToTopButton /> 
       </main>
       <footer>
         <Footer />

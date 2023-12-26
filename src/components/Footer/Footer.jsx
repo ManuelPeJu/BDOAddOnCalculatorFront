@@ -16,8 +16,8 @@ const Footer = () => {
     isVisible && 
     <>
     <div class="logo">
-    <img src="../../assets/logo_TEMP.png" alt="Logo" />
-  </div>
+      <img src="../../assets/logo_TEMP.png" alt="Logo" />
+    </div>
   {/* YISUS */}
   <div class="redes-sociales">
     <div className='list-item'>
@@ -29,6 +29,8 @@ const Footer = () => {
   <div class="redes-sociales">
       <div className='list-item'>
         <span>GameruRc</span>
+      </div>
+      <div className='list-item'>
         <a href="https://www.twitch.tv/gamerurc"><i class="bi bi-cast"></i></a>
       </div>
       <div className='list-item'>
@@ -39,6 +41,8 @@ const Footer = () => {
   <div class="redes-sociales">
       <div className='list-item'>
         <span>xDuim</span>
+      </div>
+      <div className='list-item'>
         <a href="https://github.com/ManuelPeJu"><i class="bi bi-github"></i></a>
       </div>
       <div className='list-item'>
