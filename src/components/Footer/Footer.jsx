@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import logo from "../../assets/logo_TEMP.png"
 
 
 const Footer = () => {
@@ -15,8 +15,8 @@ const Footer = () => {
   {
     isVisible && 
     <>
-    <div class="logo">
-      <img src="../../assets/logo_TEMP.png" alt="Logo" />
+    <div className="logo">
+      <img src={logo} alt="Logo" height="50px" width="50px" />
     </div>
   {/* YISUS */}
   <div class="redes-sociales">
